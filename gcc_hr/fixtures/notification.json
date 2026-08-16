@@ -1,0 +1,129 @@
+[
+ {
+  "doctype": "Notification",
+  "name": "GCC HR: Document Expiring in 90 Days",
+  "subject": "{{ doc.document_type }} for {{ doc.employee_name }} expires in 90 days",
+  "document_type": "HR Compliance Document",
+  "event": "Days Before",
+  "date_changed": "expiry_date",
+  "days_in_advance": 90,
+  "channel": "Email",
+  "send_system_notification": 1,
+  "enabled": 1,
+  "is_standard": 0,
+  "condition": "doc.status != \"Expired\"",
+  "condition_type": "Python",
+  "message_type": "Markdown",
+  "message": "**{{ doc.document_type }}** for **{{ doc.employee_name }}** ({{ doc.employee }}) expires on **{{ doc.expiry_date }}** (90 days from now).",
+  "recipients": [
+   {"receiver_by_role": "Compliance Officer"},
+   {"receiver_by_role": "HR Manager"}
+  ]
+ },
+ {
+  "doctype": "Notification",
+  "name": "GCC HR: Document Expiring in 30 Days",
+  "subject": "{{ doc.document_type }} for {{ doc.employee_name }} expires in 30 days",
+  "document_type": "HR Compliance Document",
+  "event": "Days Before",
+  "date_changed": "expiry_date",
+  "days_in_advance": 30,
+  "channel": "Email",
+  "send_system_notification": 1,
+  "enabled": 1,
+  "is_standard": 0,
+  "condition": "doc.status != \"Expired\"",
+  "condition_type": "Python",
+  "message_type": "Markdown",
+  "message": "**{{ doc.document_type }}** for **{{ doc.employee_name }}** ({{ doc.employee }}) expires on **{{ doc.expiry_date }}** (30 days from now). Status: {{ doc.status }}.",
+  "recipients": [
+   {"receiver_by_role": "Compliance Officer"},
+   {"receiver_by_role": "HR Manager"}
+  ]
+ },
+ {
+  "doctype": "Notification",
+  "name": "GCC HR: Document Expiring in 7 Days",
+  "subject": "URGENT: {{ doc.document_type }} for {{ doc.employee_name }} expires in 7 days",
+  "document_type": "HR Compliance Document",
+  "event": "Days Before",
+  "date_changed": "expiry_date",
+  "days_in_advance": 7,
+  "channel": "Email",
+  "send_system_notification": 1,
+  "enabled": 1,
+  "is_standard": 0,
+  "condition": "doc.status != \"Expired\"",
+  "condition_type": "Python",
+  "message_type": "Markdown",
+  "message": "**URGENT:** **{{ doc.document_type }}** for **{{ doc.employee_name }}** ({{ doc.employee }}) expires on **{{ doc.expiry_date }}** (7 days from now). Status: {{ doc.status }}.",
+  "recipients": [
+   {"receiver_by_role": "Compliance Officer"},
+   {"receiver_by_role": "HR Manager"},
+   {"receiver_by_role": "Payroll Manager"}
+  ]
+ },
+ {
+  "doctype": "Notification",
+  "name": "GCC HR: Document Expired",
+  "subject": "{{ doc.document_type }} for {{ doc.employee_name }} has expired",
+  "document_type": "HR Compliance Document",
+  "event": "Value Change",
+  "value_changed": "status",
+  "channel": "Email",
+  "send_system_notification": 1,
+  "enabled": 1,
+  "is_standard": 0,
+  "condition": "doc.status == \"Expired\"",
+  "condition_type": "Python",
+  "message_type": "Markdown",
+  "message": "**{{ doc.document_type }}** for **{{ doc.employee_name }}** ({{ doc.employee }}) expired on **{{ doc.expiry_date }}**. Immediate action required.",
+  "recipients": [
+   {"receiver_by_role": "Compliance Officer"},
+   {"receiver_by_role": "Compliance Manager"},
+   {"receiver_by_role": "HR Manager"}
+  ]
+ },
+ {
+  "doctype": "Notification",
+  "name": "GCC HR: Compliance Score Dropped to Critical",
+  "subject": "{{ doc.employee_name }}'s compliance status is now {{ doc.compliance_status }}",
+  "document_type": "Employee Compliance Profile",
+  "event": "Value Change",
+  "value_changed": "compliance_status",
+  "channel": "Email",
+  "send_system_notification": 1,
+  "enabled": 1,
+  "is_standard": 0,
+  "condition": "doc.compliance_status in (\"Critical\", \"Blocked\")",
+  "condition_type": "Python",
+  "message_type": "Markdown",
+  "message": "**{{ doc.employee_name }}**'s compliance status changed to **{{ doc.compliance_status }}** (score: {{ doc.compliance_score }}). Review the latest HR Compliance Check for this employee.",
+  "recipients": [
+   {"receiver_by_role": "Compliance Manager"},
+   {"receiver_by_role": "Compliance Officer"},
+   {"receiver_by_role": "HR Manager"}
+  ]
+ },
+ {
+  "doctype": "Notification",
+  "name": "GCC HR: Employment Contract Expiring in 30 Days",
+  "subject": "Contract for {{ doc.party_name }} expires in 30 days",
+  "document_type": "Contract",
+  "event": "Days Before",
+  "date_changed": "end_date",
+  "days_in_advance": 30,
+  "channel": "Email",
+  "send_system_notification": 1,
+  "enabled": 1,
+  "is_standard": 0,
+  "condition": "doc.party_type == \"Employee\" and doc.status == \"Active\"",
+  "condition_type": "Python",
+  "message_type": "Markdown",
+  "message": "The employment contract for **{{ doc.party_name }}** ends on **{{ doc.end_date }}** (30 days from now).",
+  "recipients": [
+   {"receiver_by_role": "HR Manager"},
+   {"receiver_by_role": "Compliance Officer"}
+  ]
+ }
+]

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Design tokens -- single source of truth for the app's own visual layer
+ * (SectionCard, KpiCard, AppShell/Sidebar/Header, StatusBadge, ...).
+ * Mirrored into tailwind.config.js's `app.*` color / `app-*` radius keys
+ * so components can use either `bg-app-surface` (Tailwind) or
+ * `var(--color-surface)` (plain CSS, e.g. inline chart-bar widths) and get
+ * the same value from one place. See DESIGN.md.
+ *
+ * Deliberately separate from frappe-ui's own CSS variables (--surface-*,
+ * --ink-*, --outline-*) -- those belong to frappe-ui's imported components
+ * (Button, FormControl, Dialog, ...) and are left untouched so those
+ * components keep looking internally consistent with themselves.
+ */
+:root {
+	--color-bg: #f8f9fa;
+	--color-surface: #ffffff;
+	--color-border: #e2e6ea;
+	--color-text: #171717;
+	--color-muted: #6b7280;
+	--color-disabled: #9ca3af;
+
+	--color-primary: #2490ef;
+	--color-primary-hover: #1b7cd6;
+	--color-primary-surface: #eaf4fe;
+
+	--color-success: #28a745;
+	--color-success-surface: #e9f7ec;
+	--color-warning: #f59e0b;
+	--color-warning-surface: #fef3e2;
+	--color-danger: #e5484d;
+	--color-danger-surface: #fceaea;
+	--color-info: #2490ef;
+	--color-info-surface: #eaf4fe;
+
+	--radius-sm: 6px;
+	--radius-md: 8px;
+}
+
+body {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}

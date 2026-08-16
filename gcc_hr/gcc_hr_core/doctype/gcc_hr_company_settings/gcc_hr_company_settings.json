@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:company",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "country",
+  "column_break_general",
+  "country_code",
+  "currency",
+  "compliance_enabled",
+  "section_break_languages",
+  "primary_language",
+  "column_break_languages",
+  "secondary_language",
+  "section_break_payroll",
+  "payroll_frequency",
+  "payroll_processing_day",
+  "column_break_payroll",
+  "payroll_cutoff_day",
+  "payroll_compliance_required",
+  "section_break_government",
+  "government_integration_enabled",
+  "api_environment",
+  "column_break_government",
+  "integration_status",
+  "section_break_notifications",
+  "compliance_alert_email",
+  "hr_manager",
+  "column_break_notifications",
+  "compliance_officer",
+  "payroll_manager"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "HR Country Settings",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_general",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "country.country_code",
+   "fieldname": "country_code",
+   "fieldtype": "Data",
+   "label": "Country Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "company.default_currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "compliance_enabled",
+   "fieldtype": "Check",
+   "label": "Compliance Enabled"
+  },
+  {
+   "fieldname": "section_break_languages",
+   "fieldtype": "Section Break",
+   "label": "Language"
+  },
+  {
+   "fetch_from": "country.language",
+   "fieldname": "primary_language",
+   "fieldtype": "Link",
+   "label": "Primary Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "column_break_languages",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "secondary_language",
+   "fieldtype": "Link",
+   "label": "Secondary Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "section_break_payroll",
+   "fieldtype": "Section Break",
+   "label": "Payroll"
+  },
+  {
+   "default": "Monthly",
+   "fieldname": "payroll_frequency",
+   "fieldtype": "Select",
+   "label": "Payroll Frequency",
+   "options": "Monthly\nBimonthly\nFortnightly\nWeekly\nDaily"
+  },
+  {
+   "description": "Day of the month payroll is processed on.",
+   "fieldname": "payroll_processing_day",
+   "fieldtype": "Int",
+   "label": "Payroll Processing Day"
+  },
+  {
+   "fieldname": "column_break_payroll",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Day of the month after which changes are no longer accepted for the current payroll run.",
+   "fieldname": "payroll_cutoff_day",
+   "fieldtype": "Int",
+   "label": "Payroll Cutoff Day"
+  },
+  {
+   "default": "1",
+   "description": "When enabled, Payroll Compliance Check must pass (or be explicitly overridden) before Payroll Entry submission.",
+   "fieldname": "payroll_compliance_required",
+   "fieldtype": "Check",
+   "label": "Payroll Compliance Required"
+  },
+  {
+   "fieldname": "section_break_government",
+   "fieldtype": "Section Break",
+   "label": "Government Integration"
+  },
+  {
+   "default": "0",
+   "fieldname": "government_integration_enabled",
+   "fieldtype": "Check",
+   "label": "Government Integration Enabled"
+  },
+  {
+   "default": "Sandbox",
+   "depends_on": "eval:doc.government_integration_enabled",
+   "fieldname": "api_environment",
+   "fieldtype": "Select",
+   "label": "API Environment",
+   "options": "Sandbox\nProduction"
+  },
+  {
+   "fieldname": "column_break_government",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Not Configured",
+   "depends_on": "eval:doc.government_integration_enabled",
+   "fieldname": "integration_status",
+   "fieldtype": "Select",
+   "label": "Integration Status",
+   "options": "Not Configured\nConnected\nError",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_notifications",
+   "fieldtype": "Section Break",
+   "label": "Notifications"
+  },
+  {
+   "fieldname": "compliance_alert_email",
+   "fieldtype": "Data",
+   "label": "Compliance Alert Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "hr_manager",
+   "fieldtype": "Link",
+   "label": "HR Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_notifications",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "compliance_officer",
+   "fieldtype": "Link",
+   "label": "Compliance Officer",
+   "options": "User"
+  },
+  {
+   "fieldname": "payroll_manager",
+   "fieldtype": "Link",
+   "label": "Payroll Manager",
+   "options": "User"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "GCC HR Core",
+ "name": "GCC HR Company Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Payroll Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Government Integration Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:company",
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "activity",
+  "business_size",
+  "column_break_1",
+  "compliance_status",
+  "last_calculation",
+  "section_break_counts",
+  "employee_count",
+  "emirati_employee_count",
+  "column_break_counts",
+  "non_emirati_employee_count",
+  "section_break_percentages",
+  "emirati_percentage",
+  "target_percentage",
+  "column_break_percentages",
+  "gap"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Economic activity classification for this company. Used to look up the applicable Emiratisation Requirement.",
+   "fieldname": "activity",
+   "fieldtype": "Data",
+   "label": "Activity"
+  },
+  {
+   "fieldname": "business_size",
+   "fieldtype": "Select",
+   "label": "Business Size",
+   "options": "\nMicro\nSmall\nMedium\nLarge"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Compliant",
+   "fieldname": "compliance_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Compliance Status",
+   "options": "Compliant\nAt Risk\nNon-Compliant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_calculation",
+   "fieldtype": "Datetime",
+   "label": "Last Calculation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_counts",
+   "fieldtype": "Section Break",
+   "label": "Workforce"
+  },
+  {
+   "default": "0",
+   "fieldname": "employee_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Employees",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "emirati_employee_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Emirati Employees",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_counts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "non_emirati_employee_count",
+   "fieldtype": "Int",
+   "label": "Non-Emirati Employees",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_percentages",
+   "fieldtype": "Section Break",
+   "label": "Emiratisation"
+  },
+  {
+   "default": "0",
+   "fieldname": "emirati_percentage",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Emirati Percentage",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "target_percentage",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Target Percentage",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_percentages",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gap",
+   "fieldtype": "Percent",
+   "label": "Gap",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "United Arab Emirates",
+ "name": "Emiratisation Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Officer"
+  }
+ ],
+ "search_fields": "company",
+ "sort_field": "emirati_percentage",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "company",
+ "track_changes": 1
+}

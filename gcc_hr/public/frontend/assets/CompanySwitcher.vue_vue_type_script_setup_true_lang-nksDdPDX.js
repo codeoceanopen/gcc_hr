@@ -1,0 +1,17 @@
+import{c as i}from"./createLucideIcon-BE8IGWJT.js";import{d as h,c as a,e as n,t as p,n as f,q as l,h as s,A as _,m as x,u as t,F as b,s as k,r as y}from"./index-C6yGMlDW.js";import{o as C,B as v}from"./building-2-BWTIOOaJ.js";/**
+ * @license lucide-vue-next v0.454.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const O=i("CheckIcon",[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]]);/**
+ * @license lucide-vue-next v0.454.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const w=i("ChevronDownIcon",[["path",{d:"m6 9 6 6 6-6",key:"qrunsl"}]]);/**
+ * @license lucide-vue-next v0.454.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const E=i("TriangleAlertIcon",[["path",{d:"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",key:"wmoenq"}],["path",{d:"M12 9v4",key:"juzpu7"}],["path",{d:"M12 17h.01",key:"p32p05"}]]),$={class:"rounded-app-md border border-app-border bg-app-surface p-4"},z={class:"text-[13px] leading-[16px] text-app-muted"},B={class:"mt-1.5 text-[24px] font-semibold leading-[28px] text-app-text"},K=h({__name:"KpiCard",props:{label:{},value:{},hint:{default:""},tone:{default:"neutral"}},setup(o){const e={neutral:"text-app-muted",success:"text-app-success",warning:"text-app-warning",danger:"text-app-danger"};return(r,d)=>(s(),a("div",$,[n("p",z,p(o.label),1),n("p",B,p(o.value),1),o.hint?(s(),a("p",{key:0,class:f(["mt-1 text-[12px] leading-[16px]",e[o.tone]])},p(o.hint),3)):l("",!0)]))}}),S={class:"flex items-center gap-2"},A={class:"max-w-[160px] truncate font-medium"},I={key:0,class:"absolute right-0 top-10 z-10 max-h-72 w-64 overflow-y-auto rounded-app-md border border-app-border bg-app-surface py-1 shadow-lg"},N=["onClick"],q={class:"truncate"},D={class:"shrink-0 text-[12px] text-app-muted"},M={key:0,class:"px-3 py-4 text-center text-[13px] text-app-muted"},T={key:0,class:"shrink-0 rounded-app-sm bg-app-primary-surface px-2 py-1.5 text-[12px] font-medium leading-[16px] text-app-primary"},G=h({__name:"CompanySwitcher",setup(o){const e=_(),r=y(!1),d=y(null);C(d,()=>r.value=!1);function g(u){e.selectCompany(u),r.value=!1}return(u,m)=>(s(),a("div",S,[n("div",{ref_key:"menu",ref:d,class:"relative"},[n("button",{type:"button",class:"flex items-center gap-1.5 rounded-app-sm border border-app-border bg-app-surface px-2.5 py-1.5 text-[13px] leading-[16px] text-app-text hover:bg-app-bg",onClick:m[0]||(m[0]=c=>r.value=!r.value)},[x(t(v),{size:14,class:"shrink-0 text-app-muted"}),n("span",A,p(t(e).selectedCompany||"Select company"),1),x(t(w),{size:14,class:"shrink-0 text-app-muted"})]),r.value?(s(),a("div",I,[(s(!0),a(b,null,k(t(e).companies,c=>(s(),a("button",{key:c.company,type:"button",class:f(["flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-[13px] leading-[16px] hover:bg-app-bg",c.company===t(e).selectedCompany?"font-medium text-app-primary":"text-app-text"]),onClick:V=>g(c.company)},[n("span",q,p(c.company),1),n("span",D,p(c.country),1)],10,N))),128)),t(e).companies.length?l("",!0):(s(),a("div",M," No companies configured yet. "))])):l("",!0)],512),t(e).selectedCountry?(s(),a("span",T,p(t(e).selectedCountry),1)):l("",!0)]))}});export{O as C,E as T,K as _,G as a};
+//# sourceMappingURL=CompanySwitcher.vue_vue_type_script_setup_true_lang-nksDdPDX.js.map

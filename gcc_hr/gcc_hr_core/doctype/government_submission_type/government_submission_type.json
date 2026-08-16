@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:submission_type_code",
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "submission_type_code",
+  "submission_type_name",
+  "country",
+  "column_break_1",
+  "category",
+  "reference_doctype",
+  "is_active",
+  "section_break_logic",
+  "generate_method",
+  "validate_method",
+  "section_break_manual",
+  "portal_url",
+  "portal_instructions"
+ ],
+ "fields": [
+  {
+   "description": "Unique machine code, e.g. SA_NITAQAT_REPORT.",
+   "fieldname": "submission_type_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Submission Type Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "submission_type_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Submission Type Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "HR Country Settings",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Workforce\nPayroll\nDocument\nContract\nRegistration\nOther",
+   "reqd": 1
+  },
+  {
+   "description": "The doctype a submission of this type is generated from, e.g. Saudization Profile. Informational only -- also fetched onto each Government Submission as reference_doctype.",
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Reference DocType",
+   "options": "DocType"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "section_break_logic",
+   "fieldtype": "Section Break",
+   "label": "Generation & Validation"
+  },
+  {
+   "description": "Dotted Python path to the generator, e.g. gcc_hr.countries.saudi_arabia.government.generate_nitaqat_report. Must accept (company, reference_doctype, reference_name) and return {\"filename\": str, \"content\": bytes|str, \"content_type\": str}.",
+   "fieldname": "generate_method",
+   "fieldtype": "Data",
+   "label": "Generate Method",
+   "reqd": 1
+  },
+  {
+   "description": "Dotted Python path, e.g. gcc_hr.countries.saudi_arabia.government.validate_nitaqat_report. Must accept (company, reference_doctype, reference_name) and return a list of error strings (empty list = valid). Optional -- when blank, a generated submission is treated as valid without further checks.",
+   "fieldname": "validate_method",
+   "fieldtype": "Data",
+   "label": "Validate Method"
+  },
+  {
+   "fieldname": "section_break_manual",
+   "fieldtype": "Section Break",
+   "label": "Manual Submission (No Verified Government API)"
+  },
+  {
+   "description": "The real government portal this submission is manually filed through, e.g. https://gosi.gov.sa. This app never calls a government API on your behalf -- see SECURITY.md.",
+   "fieldname": "portal_url",
+   "fieldtype": "Data",
+   "label": "Portal URL"
+  },
+  {
+   "fieldname": "portal_instructions",
+   "fieldtype": "Text",
+   "label": "Portal Instructions"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "GCC HR Core",
+ "name": "Government Submission Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Government Integration Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

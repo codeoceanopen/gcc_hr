@@ -1,0 +1,104 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_hr_salary_section",
+  "dt": "Contract",
+  "fieldname": "gcc_hr_salary_section",
+  "fieldtype": "Section Break",
+  "label": "GCC HR - Salary Breakdown",
+  "insert_after": "end_date",
+  "depends_on": "eval:doc.party_type==\"Employee\"",
+  "collapsible": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_basic_salary",
+  "dt": "Contract",
+  "fieldname": "gcc_basic_salary",
+  "fieldtype": "Currency",
+  "label": "Basic Salary",
+  "insert_after": "gcc_hr_salary_section"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_housing_allowance",
+  "dt": "Contract",
+  "fieldname": "gcc_housing_allowance",
+  "fieldtype": "Currency",
+  "label": "Housing Allowance",
+  "insert_after": "gcc_basic_salary"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_hr_salary_column_break",
+  "dt": "Contract",
+  "fieldname": "gcc_hr_salary_column_break",
+  "fieldtype": "Column Break",
+  "insert_after": "gcc_housing_allowance"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_transport_allowance",
+  "dt": "Contract",
+  "fieldname": "gcc_transport_allowance",
+  "fieldtype": "Currency",
+  "label": "Transport Allowance",
+  "insert_after": "gcc_hr_salary_column_break"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_other_allowances",
+  "dt": "Contract",
+  "fieldname": "gcc_other_allowances",
+  "fieldtype": "Currency",
+  "label": "Other Allowances",
+  "insert_after": "gcc_transport_allowance"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_total_salary",
+  "dt": "Contract",
+  "fieldname": "gcc_total_salary",
+  "fieldtype": "Currency",
+  "label": "Total Salary",
+  "insert_after": "gcc_other_allowances",
+  "read_only": 1,
+  "description": "Basic + Housing + Transport + Other Allowances. Computed automatically."
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_probation_period",
+  "dt": "Contract",
+  "fieldname": "gcc_probation_period",
+  "fieldtype": "Int",
+  "label": "Probation Period (Days)",
+  "insert_after": "gcc_total_salary"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_notice_period",
+  "dt": "Contract",
+  "fieldname": "gcc_notice_period",
+  "fieldtype": "Int",
+  "label": "Notice Period (Days)",
+  "insert_after": "gcc_probation_period"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_working_hours",
+  "dt": "Contract",
+  "fieldname": "gcc_working_hours",
+  "fieldtype": "Float",
+  "label": "Working Hours (per week)",
+  "insert_after": "gcc_notice_period"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Contract-gcc_annual_leave_days",
+  "dt": "Contract",
+  "fieldname": "gcc_annual_leave_days",
+  "fieldtype": "Int",
+  "label": "Annual Leave (Days)",
+  "insert_after": "gcc_working_hours"
+ }
+]

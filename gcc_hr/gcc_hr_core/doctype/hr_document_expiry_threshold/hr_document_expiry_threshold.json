@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "label",
+  "threshold_days",
+  "severity",
+  "column_break_1",
+  "country",
+  "document_type",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "description": "Shown to users, e.g. \"Expiring Soon\", \"Critical\", \"Expired\".",
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Label",
+   "reqd": 1
+  },
+  {
+   "description": "Number of days before expiry at which this threshold applies. Use 0 for the Expired threshold.",
+   "fieldname": "threshold_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Threshold (Days)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Severity",
+   "options": "Info\nWarning\nCritical\nBlocking",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Leave blank to apply to all countries.",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "HR Country Settings"
+  },
+  {
+   "description": "Leave blank to apply to all document types.",
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Document Type",
+   "options": "HR Document Type"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "GCC HR Core",
+ "name": "HR Document Expiry Threshold",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "threshold_days",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

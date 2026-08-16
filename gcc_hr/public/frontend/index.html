@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GCC HR Compliance</title>
+    <script type="module" crossorigin src="/assets/gcc_hr/frontend/assets/index-C6yGMlDW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/gcc_hr/frontend/assets/index-Cd82l0DE.css">
+  </head>
+  <body>
+    <div id="gcc-hr-app"></div>
+    <script>
+      window.csrf_token = '{{ csrf_token }}'
+    </script>
+  
+          <script>
+              {% for key in boot %}
+              window["{{ key }}"] = {{ boot[key] | tojson }};
+              {% endfor %}
+          </script>
+          </body>
+          
+</html>

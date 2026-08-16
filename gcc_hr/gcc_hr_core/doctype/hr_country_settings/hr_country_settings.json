@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:country",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "country",
+  "country_code",
+  "is_active",
+  "column_break_1",
+  "currency",
+  "language",
+  "timezone",
+  "date_format",
+  "section_break_rulesets",
+  "payroll_ruleset",
+  "labour_law_ruleset",
+  "column_break_2",
+  "compliance_engine_enabled",
+  "government_integration_enabled",
+  "section_break_notes",
+  "description"
+ ],
+ "fields": [
+  {
+   "description": "GCC country this configuration applies to. Only the countries listed here are recognized by the compliance engine.",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "country.code",
+   "fieldname": "country_code",
+   "fieldtype": "Data",
+   "label": "Country Code",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Whether this country's localization module is available for selection on GCC HR Company Settings. Turn on only once the country's module (documents, rules, score bands) has been configured.",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "label": "Language",
+   "options": "Language"
+  },
+  {
+   "description": "e.g. Asia/Riyadh, Asia/Qatar, Asia/Dubai",
+   "fieldname": "timezone",
+   "fieldtype": "Data",
+   "label": "Timezone"
+  },
+  {
+   "fieldname": "date_format",
+   "fieldtype": "Select",
+   "label": "Date Format",
+   "options": "yyyy-mm-dd\ndd-mm-yyyy\ndd/mm/yyyy\ndd.mm.yyyy\nmm/dd/yyyy\nmm-dd-yyyy"
+  },
+  {
+   "fieldname": "section_break_rulesets",
+   "fieldtype": "Section Break",
+   "label": "Rulesets"
+  },
+  {
+   "description": "Reference/version identifier for the payroll ruleset implemented for this country (e.g. the country module's setup.py version). Informational until a dedicated Payroll Ruleset doctype is introduced.",
+   "fieldname": "payroll_ruleset",
+   "fieldtype": "Data",
+   "label": "Payroll Ruleset"
+  },
+  {
+   "description": "Reference/version identifier for the labour law ruleset implemented for this country.",
+   "fieldname": "labour_law_ruleset",
+   "fieldtype": "Data",
+   "label": "Labour Law Ruleset"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Enables the HR Compliance Rule engine and scoring for this country.",
+   "fieldname": "compliance_engine_enabled",
+   "fieldtype": "Check",
+   "label": "Compliance Engine Enabled"
+  },
+  {
+   "default": "0",
+   "description": "Enables Government Integration features (Phase 5) for this country.",
+   "fieldname": "government_integration_enabled",
+   "fieldtype": "Check",
+   "label": "Government Integration Enabled"
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "GCC HR Core",
+ "name": "HR Country Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:employee",
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "nationality_status",
+  "column_break_1",
+  "profession",
+  "sponsor",
+  "section_break_eid",
+  "eid_number",
+  "eid_expiry",
+  "column_break_eid",
+  "border_number",
+  "section_break_visa",
+  "visa_number",
+  "visa_type",
+  "column_break_visa",
+  "work_permit_number",
+  "work_permit_expiry",
+  "section_break_wps",
+  "wps_registered",
+  "wps_bank_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "default": "Non-Emirati",
+   "fieldname": "nationality_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Emirati / Non-Emirati",
+   "options": "Emirati\nNon-Emirati",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "profession",
+   "fieldtype": "Data",
+   "label": "Profession"
+  },
+  {
+   "fieldname": "sponsor",
+   "fieldtype": "Data",
+   "label": "Sponsor / Employer"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.nationality_status==\"Non-Emirati\"",
+   "fieldname": "section_break_eid",
+   "fieldtype": "Section Break",
+   "label": "Emirates ID (EID)"
+  },
+  {
+   "fieldname": "eid_number",
+   "fieldtype": "Data",
+   "label": "EID Number",
+   "mandatory_depends_on": "eval:doc.nationality_status==\"Non-Emirati\""
+  },
+  {
+   "fieldname": "eid_expiry",
+   "fieldtype": "Date",
+   "label": "EID Expiry"
+  },
+  {
+   "fieldname": "column_break_eid",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "border_number",
+   "fieldtype": "Data",
+   "label": "Border Number"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.nationality_status==\"Non-Emirati\"",
+   "fieldname": "section_break_visa",
+   "fieldtype": "Section Break",
+   "label": "Visa / Work Permit"
+  },
+  {
+   "fieldname": "visa_number",
+   "fieldtype": "Data",
+   "label": "Visa Number"
+  },
+  {
+   "fieldname": "visa_type",
+   "fieldtype": "Select",
+   "label": "Visa Type",
+   "options": "\nWork\nVisit\nFamily\nOther"
+  },
+  {
+   "fieldname": "column_break_visa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_permit_number",
+   "fieldtype": "Data",
+   "label": "Work Permit Number"
+  },
+  {
+   "fieldname": "work_permit_expiry",
+   "fieldtype": "Date",
+   "label": "Work Permit Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_wps",
+   "fieldtype": "Section Break",
+   "label": "Wage Protection System (WPS)"
+  },
+  {
+   "default": "0",
+   "description": "Whether this employee's salary is paid through a WPS-registered bank account, as required by UAE Ministerial Resolution / Wages Protection System regulations administered via the Central Bank of the UAE. Identity/tracking field only -- this app never files with WPS on your behalf, see the Government Integration Framework.",
+   "fieldname": "wps_registered",
+   "fieldtype": "Check",
+   "label": "WPS Registered"
+  },
+  {
+   "fieldname": "wps_bank_name",
+   "fieldtype": "Data",
+   "label": "WPS Bank Name"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "United Arab Emirates",
+ "name": "UAE Employee Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Officer",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Officer"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Employee"
+  }
+ ],
+ "search_fields": "employee_name,eid_number",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

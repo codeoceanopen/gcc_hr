@@ -1,0 +1,368 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:employee",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "company",
+  "country",
+  "tab_personal",
+  "nationality",
+  "national_id",
+  "column_break_personal",
+  "passport_number",
+  "passport_expiry",
+  "date_of_birth",
+  "tab_employment",
+  "employment_type",
+  "designation",
+  "department",
+  "column_break_employment",
+  "joining_date",
+  "contract",
+  "contract_start",
+  "contract_end",
+  "section_break_salary",
+  "basic_salary",
+  "housing_allowance",
+  "column_break_salary",
+  "transport_allowance",
+  "other_allowances",
+  "total_salary",
+  "tab_compliance",
+  "compliance_score",
+  "compliance_status",
+  "column_break_compliance",
+  "last_compliance_check",
+  "next_compliance_check"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "HR Country Settings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_personal",
+   "fieldtype": "Tab Break",
+   "label": "Personal Identity"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID"
+  },
+  {
+   "fieldname": "column_break_personal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.passport_number",
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.valid_upto",
+   "fieldname": "passport_expiry",
+   "fieldtype": "Date",
+   "label": "Passport Expiry",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_employment",
+   "fieldtype": "Tab Break",
+   "label": "Employment"
+  },
+  {
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "label": "Employment Type",
+   "options": "Full-time\nPart-time\nContract\nTemporary\nProbation"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_employment",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date",
+   "read_only": 1
+  },
+  {
+   "description": "Active employment Contract (party_type = Employee) backing this profile.",
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Contract"
+  },
+  {
+   "fetch_from": "contract.start_date",
+   "fieldname": "contract_start",
+   "fieldtype": "Date",
+   "label": "Contract Start",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.end_date",
+   "fieldname": "contract_end",
+   "fieldtype": "Date",
+   "label": "Contract End",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_salary",
+   "fieldtype": "Section Break",
+   "label": "Salary (from Contract)"
+  },
+  {
+   "fetch_from": "contract.gcc_basic_salary",
+   "fieldname": "basic_salary",
+   "fieldtype": "Currency",
+   "label": "Basic Salary",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.gcc_housing_allowance",
+   "fieldname": "housing_allowance",
+   "fieldtype": "Currency",
+   "label": "Housing Allowance",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_salary",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contract.gcc_transport_allowance",
+   "fieldname": "transport_allowance",
+   "fieldtype": "Currency",
+   "label": "Transport Allowance",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.gcc_other_allowances",
+   "fieldname": "other_allowances",
+   "fieldtype": "Currency",
+   "label": "Other Allowances",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.gcc_total_salary",
+   "fieldname": "total_salary",
+   "fieldtype": "Currency",
+   "label": "Total Salary",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_compliance",
+   "fieldtype": "Tab Break",
+   "label": "Compliance"
+  },
+  {
+   "default": "0",
+   "fieldname": "compliance_score",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Compliance Score",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "default": "Warning",
+   "fieldname": "compliance_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Compliance Status",
+   "options": "Compliant\nWarning\nCritical\nBlocked",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_compliance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_compliance_check",
+   "fieldtype": "Datetime",
+   "label": "Last Compliance Check",
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_compliance_check",
+   "fieldtype": "Date",
+   "label": "Next Compliance Check",
+   "read_only": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "fetch_from": "company.default_currency",
+   "label": "Currency",
+   "options": "Currency"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "GCC HR Core",
+ "name": "Employee Compliance Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Officer",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Officer"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Payroll Manager"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Employee"
+  }
+ ],
+ "search_fields": "employee_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

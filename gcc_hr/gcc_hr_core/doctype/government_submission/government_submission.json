@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "submission_type",
+  "column_break_1",
+  "status",
+  "outcome",
+  "section_break_reference",
+  "reference_doctype",
+  "reference_name",
+  "section_break_generated",
+  "generated_document",
+  "generated_on",
+  "column_break_generated",
+  "validation_errors",
+  "validated_on",
+  "section_break_manual",
+  "submitted_on",
+  "submitted_by",
+  "government_reference_number",
+  "column_break_manual",
+  "response_document",
+  "response_uploaded_on",
+  "section_break_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "GOV-SUB-.YYYY.-"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "submission_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Submission Type",
+   "options": "Government Submission Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nGenerated\nValidated\nReady for Submission\nSubmitted\nResponse Uploaded\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Outcome",
+   "options": "\nAccepted\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_reference",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fetch_from": "submission_type.reference_doctype",
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Reference DocType",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Name",
+   "options": "reference_doctype"
+  },
+  {
+   "fieldname": "section_break_generated",
+   "fieldtype": "Section Break",
+   "label": "Generated Document"
+  },
+  {
+   "fieldname": "generated_document",
+   "fieldtype": "Attach",
+   "label": "Generated Document",
+   "read_only": 1
+  },
+  {
+   "fieldname": "generated_on",
+   "fieldtype": "Datetime",
+   "label": "Generated On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_generated",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "One error per line. Must be empty before this submission can be marked Ready for Submission.",
+   "fieldname": "validation_errors",
+   "fieldtype": "Small Text",
+   "label": "Validation Errors",
+   "read_only": 1
+  },
+  {
+   "fieldname": "validated_on",
+   "fieldtype": "Datetime",
+   "label": "Validated On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_manual",
+   "fieldtype": "Section Break",
+   "label": "Manual Submission"
+  },
+  {
+   "fieldname": "submitted_on",
+   "fieldtype": "Datetime",
+   "label": "Submitted On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "submitted_by",
+   "fieldtype": "Link",
+   "label": "Submitted By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "description": "The reference/tracking number the government portal gave back after manual submission.",
+   "fieldname": "government_reference_number",
+   "fieldtype": "Data",
+   "label": "Government Reference Number"
+  },
+  {
+   "fieldname": "column_break_manual",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "The confirmation/response document downloaded from the government portal after manual submission, uploaded here for record-keeping.",
+   "fieldname": "response_document",
+   "fieldtype": "Attach",
+   "label": "Response Document"
+  },
+  {
+   "fieldname": "response_uploaded_on",
+   "fieldtype": "Datetime",
+   "label": "Response Uploaded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "GCC HR Core",
+ "name": "Government Submission",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Government Integration Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "submission_type",
+ "track_changes": 1
+}

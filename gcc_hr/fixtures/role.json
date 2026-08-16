@@ -1,0 +1,51 @@
+[
+ {
+  "doctype": "Role",
+  "name": "GCC HR Administrator",
+  "role_name": "GCC HR Administrator",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "HR Officer",
+  "role_name": "HR Officer",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Payroll Manager",
+  "role_name": "Payroll Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Payroll Officer",
+  "role_name": "Payroll Officer",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Compliance Manager",
+  "role_name": "Compliance Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Compliance Officer",
+  "role_name": "Compliance Officer",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Government Integration Manager",
+  "role_name": "Government Integration Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ }
+]

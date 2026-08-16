@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "applicable_employee_category",
+  "effective_from",
+  "effective_to",
+  "column_break_1",
+  "employee_contribution_rate",
+  "employer_contribution_rate",
+  "section_break_base",
+  "contribution_floor",
+  "contribution_ceiling",
+  "section_break_notes",
+  "description"
+ ],
+ "fields": [
+  {
+   "description": "GOSI runs a different scheme for Saudi nationals (Annuities/pension, employee + employer contribution) than for Non-Saudi employees (Occupational Hazards only, employer contribution).",
+   "fieldname": "applicable_employee_category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Applicable Employee Category",
+   "options": "Saudi\nNon-Saudi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Effective From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_contribution_rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Employee Contribution Rate"
+  },
+  {
+   "fieldname": "employer_contribution_rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Employer Contribution Rate"
+  },
+  {
+   "fieldname": "section_break_base",
+   "fieldtype": "Section Break",
+   "label": "Contribution Base"
+  },
+  {
+   "fieldname": "contribution_floor",
+   "fieldtype": "Currency",
+   "label": "Contribution Floor"
+  },
+  {
+   "fieldname": "contribution_ceiling",
+   "fieldtype": "Currency",
+   "label": "Contribution Ceiling"
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "description": "GOSI rates and the contribution-base composition change by circular (e.g. the July 2024 reform phasing in additional allowances). Verify against the official GOSI circular in force for effective_from before relying on these numbers for real payroll -- see the seed values from countries/saudi_arabia/setup.py for what this app ships as an illustrative starting point, not a claim of current official rates.",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Saudi Arabia",
+ "name": "GOSI Settings",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Payroll Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager"
+  }
+ ],
+ "sort_field": "effective_from",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

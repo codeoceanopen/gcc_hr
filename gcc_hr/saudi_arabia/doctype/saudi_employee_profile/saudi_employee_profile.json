@@ -1,0 +1,234 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:employee",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "nationality_status",
+  "column_break_1",
+  "profession",
+  "sponsor",
+  "section_break_iqama",
+  "iqama_number",
+  "iqama_expiry",
+  "column_break_iqama",
+  "border_number",
+  "section_break_visa",
+  "visa_number",
+  "visa_type",
+  "column_break_visa",
+  "work_permit_number",
+  "work_permit_expiry",
+  "section_break_gosi",
+  "gosi_registration_number",
+  "qiwa_contract_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "default": "Non-Saudi",
+   "fieldname": "nationality_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Saudi / Non-Saudi",
+   "options": "Saudi\nNon-Saudi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "profession",
+   "fieldtype": "Data",
+   "label": "Profession"
+  },
+  {
+   "fieldname": "sponsor",
+   "fieldtype": "Data",
+   "label": "Sponsor"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.nationality_status==\"Non-Saudi\"",
+   "fieldname": "section_break_iqama",
+   "fieldtype": "Section Break",
+   "label": "Iqama"
+  },
+  {
+   "fieldname": "iqama_number",
+   "fieldtype": "Data",
+   "label": "Iqama Number",
+   "mandatory_depends_on": "eval:doc.nationality_status==\"Non-Saudi\""
+  },
+  {
+   "fieldname": "iqama_expiry",
+   "fieldtype": "Date",
+   "label": "Iqama Expiry"
+  },
+  {
+   "fieldname": "column_break_iqama",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "border_number",
+   "fieldtype": "Data",
+   "label": "Border Number"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.nationality_status==\"Non-Saudi\"",
+   "fieldname": "section_break_visa",
+   "fieldtype": "Section Break",
+   "label": "Visa / Work Permit"
+  },
+  {
+   "fieldname": "visa_number",
+   "fieldtype": "Data",
+   "label": "Visa Number"
+  },
+  {
+   "fieldname": "visa_type",
+   "fieldtype": "Select",
+   "label": "Visa Type",
+   "options": "\nWork\nVisit\nFamily\nOther"
+  },
+  {
+   "fieldname": "column_break_visa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_permit_number",
+   "fieldtype": "Data",
+   "label": "Work Permit Number"
+  },
+  {
+   "fieldname": "work_permit_expiry",
+   "fieldtype": "Date",
+   "label": "Work Permit Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_gosi",
+   "fieldtype": "Section Break",
+   "label": "Government"
+  },
+  {
+   "description": "Identity reference only -- GOSI contribution calculation is a dedicated GOSI Employee Profile, Phase 3.",
+   "fieldname": "gosi_registration_number",
+   "fieldtype": "Data",
+   "label": "GOSI Registration Number"
+  },
+  {
+   "default": "Not Registered",
+   "fieldname": "qiwa_contract_status",
+   "fieldtype": "Select",
+   "label": "Qiwa Contract Status",
+   "options": "Not Registered\nPending\nApproved\nRejected"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Saudi Arabia",
+ "name": "Saudi Employee Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "GCC HR Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Officer",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Compliance Officer"
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Employee"
+  }
+ ],
+ "search_fields": "employee_name,iqama_number",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}
