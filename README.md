@@ -108,6 +108,14 @@ Pre-commit is configured to use the following tools for checking and formatting 
 
 See CONTRIBUTING.md for the phase-based development workflow this app follows.
 
+### Full documentation
+
+[docs/GCC_HR_Documentation.html](docs/GCC_HR_Documentation.html) is a
+self-contained guide covering installation, architecture, the doctype/API
+reference, the security model, and a walkthrough of every module --
+download it and open it in a browser (GitHub renders raw HTML as source,
+not as a page).
+
 ### CI
 
 This app can use GitHub Actions for CI. The following workflows are configured:
