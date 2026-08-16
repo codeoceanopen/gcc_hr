@@ -110,11 +110,12 @@ See CONTRIBUTING.md for the phase-based development workflow this app follows.
 
 ### Full documentation
 
-[docs/GCC_HR_Documentation.html](docs/GCC_HR_Documentation.html) is a
-self-contained guide covering installation, architecture, the doctype/API
-reference, the security model, and a walkthrough of every module --
-download it and open it in a browser (GitHub renders raw HTML as source,
-not as a page).
+**[Open the documentation](https://htmlpreview.github.io/?https://github.com/codeoceanopen/gcc_hr/blob/main/docs/GCC_HR_Documentation.html)**
+-- a self-contained guide covering installation, architecture, the
+doctype/API reference, the security model, and a walkthrough of every
+module. (Source: [docs/GCC_HR_Documentation.html](docs/GCC_HR_Documentation.html)
+-- GitHub renders raw HTML as source, not as a page, so use the link
+above rather than opening that file directly.)
 
 ### CI
 
